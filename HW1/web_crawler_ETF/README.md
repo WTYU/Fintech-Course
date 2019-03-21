@@ -27,13 +27,13 @@ We use
 
 
 ## Flow chart
-![alt text](./fintect_crawler.png)
+![alt text](./fintech_crawler.png)
 
 
 ## Issues
 - 1.程式中用到 **_requests_** 和 **_pandas_** 套件，未安裝者在你的終端運行命令
- **_pip install requests_**
- **_pip install pandas_**
+ --**_pip install requests_**
+ --**_pip install pandas_**
  即可
 
 - 2.如果你還沒有安裝pip，或者不確定自己是否已安裝pip，http://www.runoob.com/w3cnote/python-pip-install-usage.html 可以幫助你完成這一流程。
