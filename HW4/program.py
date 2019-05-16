@@ -5,7 +5,6 @@ import pandas as pd
 import calendar
 from scipy import stats
 import  numpy  as  np 
-import performanceanalytics
 import math
 
 
@@ -103,8 +102,6 @@ for j in Symbols:
         year = datetime.datetime.strptime(all_frames[0]['Date'][i], '%Y-%m-%d').year
         month = datetime.datetime.strptime(all_frames[0]['Date'][i], '%Y-%m-%d').month
         firstDayWeekDay, monthRange = calendar.monthrange(year, month)
-        
-        #print(all_frames[0]['Date'][i], datetime.date(year=year, month=month, day=monthRange), last_month != month)
         
         # 新月份開頭
         if(last_month != month):
@@ -213,17 +210,14 @@ for j in Symbols:
             temp = temp + r_d[i]
     d_d_Q[j] = math.exp(temp/(len(r_d) - c))
     
-    
-    
-    
+    # 清空陣列
     del lis1[:]
     del lis2[:]
     del r_m[:]
     del r_d[:]
     
     
-    #d_m_Omega[j] = performanceanalytics.OmegaSharpeRatio(r_m, rf)
-
+# 印出最後三項指標之排序結果
 for key, value in sorted(d_m_ASKSR.items(), key=lambda kv: kv[1],reverse = True):
     print(key, value)
 for key, value in sorted(d_d_ASKSR.items(), key=lambda kv: kv[1],reverse = True):
